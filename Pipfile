@@ -9,6 +9,8 @@ verify_ssl = true
 django = "==2.2.13"
 django-mssql-backend = "*"
 python-decouple = "*"
+django-filter = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.6"
