@@ -69,7 +69,7 @@ RUN echo "---> Cleaning up" \
 
 RUN mkdir -p /var/labhacker/api_enquetes
 
-WORKDIR /var/labhacker/api_enquetes --no-ca
+WORKDIR /var/labhacker/api_enquetes
 ADD . /var/labhacker/api_enquetes/
 RUN pip install -r requirements.txt
 

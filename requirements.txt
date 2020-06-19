@@ -1,0 +1,5 @@
+django==2.2.13
+django-mssql-backend
+python-decouple
+django-filter
+djangorestframework
