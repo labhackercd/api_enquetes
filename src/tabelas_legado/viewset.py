@@ -3,9 +3,9 @@ from rest_framework import viewsets
 from .models import (Curtida, FormularioPublicado,
                      ItemResposta, Posicionamento, RelatorioGeral, Resposta)
 
-from .serializer import (CurtidaSerializer, FormularioPublicadoSerializer,
-                         ItemRespostaSerializer, PosicionamentoSerializer,
-                         RelatorioGeralSerializer, RespostaSerializer)
+from .serializers import (CurtidaSerializer, FormularioPublicadoSerializer,
+                          ItemRespostaSerializer, PosicionamentoSerializer,
+                          RelatorioGeralSerializer, RespostaSerializer)
 
 from .filters import (CurtidaFilter, FormularioPublicadoFilter,
                       ItemRespostaFilter, PosicionamentoFilter,
