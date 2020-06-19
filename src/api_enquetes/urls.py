@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.urls import include, path
 from tabelas_legado.urls import router
-
+from estatisticas.urls import urls_statistics
 
 urlpatterns = [
     path('api/', include('rest_framework.urls')),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('', include(urls_statistics))
 ]
