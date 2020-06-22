@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1', cast=Csv())
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -82,15 +82,15 @@ WSGI_APPLICATION = 'api_enquetes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': config('ENGINE', default=''),
-        'NAME': config('NAME', default=''),
-        'HOST': config('HOST', default=''),
-        'PORT': config('PORT', default=''),
-        'USER': config('USER_DB', default=''),
-        'PASSWORD': config('PASSWORD', default=''),
+        'ENGINE': config('ENGINE'),
+        'NAME': config('NAME'),
+        'HOST': config('HOST'),
+        'PORT': config('PORT'),
+        'USER': config('USER_DB'),
+        'PASSWORD': config('PASSWORD'),
 
         'OPTIONS': {
-            'driver': config('DRIVER', default=''),
+            'driver': config('DRIVER'),
         },
     }
 
