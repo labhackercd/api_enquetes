@@ -1,9 +1,5 @@
 FROM ubuntu:18.04
 
-# Development: where the actual coding takes place
-# Staging: where the application is reviewed and tested
-# Production: where the final version of the application is hosted
-
 # Define Your Envs Config
 ENV PYENV_ROOT=$HOME/.pyenv
 ENV PATH=$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
@@ -32,7 +28,8 @@ RUN apt-get install -y \
     tk-dev \
     libffi-dev \
     liblzma-dev \
-    unixodbc-dev
+    unixodbc-dev \
+    tzdata
 
 # Config Timezone America/Sao_Paulo
 RUN ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
@@ -73,4 +70,4 @@ WORKDIR /var/labhacker/api_enquetes
 ADD . /var/labhacker/api_enquetes/
 RUN pip install -r requirements.txt
 
-CMD [ "python3", "src/manage.py runserver 0.0.0.0:8000" ]
+CMD [ "python", "src/manage.py runserver 0.0.0.0:8000" ]
