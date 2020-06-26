@@ -2,10 +2,10 @@ version: "3"
 
 services:
   api:
+    image: labhackercd/api_enquetes
     container_name: api_enquetes
     env_file:
       - ./src/api_enquetes/.env
-    image: labhackercd/api_enquetes
     ports:
       - "8005:8000"
     restart: on-failure

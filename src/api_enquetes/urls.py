@@ -16,9 +16,12 @@ Including another URLconf
 from django.urls import include, path
 from tabelas_legado.urls import router
 from estatisticas.urls import urls_statistics
+from django.conf import settings
 
 urlpatterns = [
-    path('api/', include('rest_framework.urls')),
-    path('', include(router.urls)),
-    path('', include(urls_statistics))
+    path(settings.URL_PREFIX, include([
+        path('api/', include('rest_framework.urls')),
+        path('', include(router.urls)),
+        path('', include(urls_statistics))
+    ]))
 ]
