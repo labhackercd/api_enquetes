@@ -3,3 +3,4 @@ django-mssql-backend
 python-decouple
 django-filter
 djangorestframework
+django-cors-headers
